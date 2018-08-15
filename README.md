@@ -124,7 +124,7 @@ python Scripts/get_scores.py --pred <path_to_preds> --output <path_to_file_to_sa
 
 ### Cityscapes
 - Download the Cityscapes dataset (leftImg8bit\_trainvaltest.zip) from the official [website](https://www.cityscapes-dataset.com/downloads/) [11 GB]
-- Download our processed annotation files from [here](http://www.cs.toronto.edu/~amlan/data/polygon/cityscapes.tar.gz) [68 MB]
+- Our processed annotation files are included in the download file you get after signing up
 - From the root directory, run the following command with appropriate paths to get the annotation files ready for your machine
 ```
 python Scripts/data/change_paths.py --city_dir <path_to_downloaded_leftImg8bit_folder> --json_dir <path_to_downloaded_annotation_file> --output_dir <output_dir>
@@ -141,7 +141,7 @@ To train on your custom datasets, you have one of two options:
 - **Note** - While resuming training, always resume from end of epoch checkpoints to produce reproducible results!
 
 ### Training MLE model
-- Edit the experiment file at [Experiments/mle.json](Experiments/mle.json) and change paths for your machine
+- Edit the experiment file at Experiments/mle.json and change paths for your machine
 - From the root directory, run
 ```
 python Scripts/train/train_ce.py --exp Experiments/mle.json --reload <optional_if_resuming_training>
@@ -149,7 +149,7 @@ python Scripts/train/train_ce.py --exp Experiments/mle.json --reload <optional_i
 - You can view progress on Tensorboard (logs are at <experiment\_dir>/logs/)
 
 ### Training RL model
-- Edit the experiment file at [Experiments/rl.json](Experiments/rl.json) and change paths for your machine
+- Edit the experiment file at Experiments/rl.json and change paths for your machine
 - In the experiment file, set xe\_initializer to the best MLE model
 - From the root directory, run
 ```
@@ -158,7 +158,7 @@ python Scripts/train/train_rl.py --exp Experiments/mle.json --reload <optional_i
 - **Note** - You might have to play with hyperparameters a bit to achieve stable training, especially temperature, lr and lr\_decay
 
 ### Training Evaluator
-- Edit the experiment file at [Experiments/evaluator.json](Experiments/evaluator.json) and change paths for your machine
+- Edit the experiment file at Experiments/evaluator.json and change paths for your machine
 - In the experiment file, set xe\_initializer to the best RL model
 - From the root directory, run
 ```
@@ -166,7 +166,7 @@ python Scripts/train/train_evaluator.py --exp Experiments/evaluator.json --reloa
 ```
 
 ### Training GGNN
-- Edit the experiment file at [Experiments/ggnn.json](Experiments/ggnn.json) and change paths for your machine
+- Edit the experiment file at Experiments/ggnn.json and change paths for your machine
 - In the experiment file, set xe\_initializer to the best Evaluator model
 - From the root directory, run
 ```
