@@ -1,0 +1,3 @@
+Please visit [our website](http://www.cs.toronto.edu/polyrnn/code_signup/), to download the code.
+
+Please raise any issues with the code on GitHub!
