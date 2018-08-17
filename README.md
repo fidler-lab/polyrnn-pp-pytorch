@@ -112,6 +112,7 @@ from the command line. This image directory MUST contain the pre-defined images 
 ```
 python Scripts/prediction/generate_annotation.py --exp <path_to_corresponding_experiment> --reload <path_to_checkpoint> --output_dir <path_to_store_predictions>
 ```
+- If you are testing a RL checkpoint, then the experiment file would correspond be the RL experiment file, and similarly for other stages of the model
 - You can check predicted/GT masks for every instance in the output_dir
 - To get scores, run
 ```
@@ -127,7 +128,7 @@ python Scripts/get_scores.py --pred <path_to_preds> --output <path_to_file_to_sa
 - Our processed annotation files are included in the download file you get after signing up
 - From the root directory, run the following command with appropriate paths to get the annotation files ready for your machine
 ```
-python Scripts/data/change_paths.py --city_dir <path_to_downloaded_leftImg8bit_folder> --json_dir <path_to_downloaded_annotation_file> --output_dir <output_dir>
+python Scripts/data/change_paths.py --city_dir <path_to_downloaded_leftImg8bit_folder> --json_dir <path_to_downloaded_annotation_file> --out_dir <output_dir>
 ```
 
 ### Custom Dataset
@@ -144,7 +145,7 @@ To train on your custom datasets, you have one of two options:
 - Edit the experiment file at Experiments/mle.json and change paths for your machine
 - From the root directory, run
 ```
-python Scripts/train/train_ce.py --exp Experiments/mle.json --reload <optional_if_resuming_training>
+python Scripts/train/train_ce.py --exp Experiments/mle.json --resume <optional_if_resuming_training>
 ```
 - You can view progress on Tensorboard (logs are at <experiment\_dir>/logs/)
 
@@ -153,7 +154,7 @@ python Scripts/train/train_ce.py --exp Experiments/mle.json --reload <optional_i
 - In the experiment file, set xe\_initializer to the best MLE model
 - From the root directory, run
 ```
-python Scripts/train/train_rl.py --exp Experiments/mle.json --reload <optional_if_resuming_training>
+python Scripts/train/train_rl.py --exp Experiments/mle.json --resume <optional_if_resuming_training>
 ```
 - **Note** - You might have to play with hyperparameters a bit to achieve stable training, especially temperature, lr and lr\_decay
 
@@ -162,7 +163,7 @@ python Scripts/train/train_rl.py --exp Experiments/mle.json --reload <optional_i
 - In the experiment file, set xe\_initializer to the best RL model
 - From the root directory, run
 ```
-python Scripts/train/train_evaluator.py --exp Experiments/evaluator.json --reload <optional_if_resuming_training>
+python Scripts/train/train_evaluator.py --exp Experiments/evaluator.json --resume <optional_if_resuming_training>
 ```
 
 ### Training GGNN
@@ -170,5 +171,5 @@ python Scripts/train/train_evaluator.py --exp Experiments/evaluator.json --reloa
 - In the experiment file, set xe\_initializer to the best Evaluator model
 - From the root directory, run
 ```
-python Scripts/train/train_ggnn.py --exp Experiments/ggnn.json --reload <optional_if_resuming_training>
+python Scripts/train/train_ggnn.py --exp Experiments/ggnn.json --resume <optional_if_resuming_training>
 ```
