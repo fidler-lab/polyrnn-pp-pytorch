@@ -5,7 +5,7 @@ This is the official PyTorch reimplementation of Polygon-RNN++ (CVPR 2018). This
 **Efficient Interactive Annotation of Segmentation Datasets with Polygon-RNN++**  
 [David Acuna](http://www.cs.toronto.edu/~davidj/)\*, [Huan Ling](http:///www.cs.toronto.edu/~linghuan/)\*, [Amlan Kar](http://www.cs.toronto.edu/~amlan/)\*, [Sanja Fidler](http://www.cs.toronto.edu/~fidler/) (\* denotes equal contribution)   
 CVPR 2018  
-**[[Paper](https://arxiv.org/abs/1803.09693)] [[Video](https://www.youtube.com/watch?v=evGqMnL4P3E)] [[Project Page](http://www.cs.toronto.edu/polyrnn/)] [[Demo](https://goo.gl/forms/aWEHgFTyWfeA5oUt1)]**  
+**[[Paper](https://arxiv.org/abs/1803.09693)] [[Video](https://www.youtube.com/watch?v=evGqMnL4P3E)] [[Project Page](http://www.cs.toronto.edu/polyrnn/)] [[Demo](http://www.cs.toronto.edu/~amlan/demo/)]**  
 <img src = "Docs/model.png" width="56%"/>
 <img src = "Docs/polydemo.gif" width="42%"/>
 
