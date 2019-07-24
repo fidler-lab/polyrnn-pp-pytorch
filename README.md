@@ -154,7 +154,7 @@ python Scripts/train/train_ce.py --exp Experiments/mle.json --resume <optional_i
 - In the experiment file, set xe\_initializer to the best MLE model
 - From the root directory, run
 ```
-python Scripts/train/train_rl.py --exp Experiments/mle.json --resume <optional_if_resuming_training>
+python Scripts/train/train_rl.py --exp Experiments/rl.json --resume <optional_if_resuming_training>
 ```
 - **Note** - You might have to play with hyperparameters a bit to achieve stable training, especially temperature, lr and lr\_decay
 
